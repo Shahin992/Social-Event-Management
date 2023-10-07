@@ -31,7 +31,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-[#FF444A] text-lg font-bold underline"
+                  ? "text-accent text-lg font-bold underline"
                   : ""
               }
             >
@@ -39,12 +39,12 @@ const Navbar = () => {
             </NavLink>
 
             <NavLink
-              to="/Services"
+              to="/Service"
               className={({ isActive, isPending }) =>
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-[#FF444A] text-lg font-bold underline"
+                  ? "text-accent text-lg font-bold underline"
                   : ""
               }
             >
@@ -57,7 +57,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-[#FF444A] text-lg font-bold underline"
+                  ? "text-accent text-lg font-bold underline"
                   : ""
               }
             >
@@ -71,7 +71,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-[#FF444A] text-lg font-bold underline"
+                  ? "text-accent text-lg font-bold underline"
                   : ""
               }
             >
@@ -82,7 +82,7 @@ const Navbar = () => {
         </div>
         <img
           className="md:h-20 h-28 md:ml-0 ml-10"
-          src="https://i.ibb.co/RjphJKK/event-logo-1.jpg"
+          src="https://i.ibb.co/gzCkRs1/Event-wizard.jpg"
           alt=""
         />
       </div>
@@ -95,7 +95,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-[#FF444A] text-lg font-bold underline"
+                  ? "text-accent text-lg font-bold underline"
                   : ""
               }
             >
@@ -109,7 +109,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-[#FF444A] text-lg font-bold underline"
+                  ? "text-accent text-lg font-bold underline"
                   : ""
               }
             >
@@ -124,7 +124,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-[#FF444A] text-lg font-bold underline"
+                  ? "text-accent text-lg font-bold underline"
                   : ""
               }
             >
@@ -138,7 +138,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-[#FF444A] text-lg font-bold underline"
+                  ? "text-accent text-lg font-bold underline"
                   : ""
               }
             >

@@ -17,9 +17,7 @@ const Home = () => {
             <div className="md:w-2/3">
               <h1 className="mb-5 md:text-5xl font-bold">
                 Life is a collection of moments, make this one unforgettable
-                with{" "}
-                <span className="font-extrabold text-accent">
-                  Event Organizer
+                with<span className="font-extrabold text-accent"> Event Organizer
                 </span>
               </h1>
             </div>

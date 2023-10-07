@@ -10,6 +10,7 @@ import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
 import About_Us from './Components/About/About_Us';
 import ContactUs from './Components/About/ContactUs/ContactUs';
+import ServiceDetail from './Components/ServiceDetails/ServiceDetail';
 
 const router = createBrowserRouter([
   {
@@ -40,7 +41,13 @@ const router = createBrowserRouter([
       {
         path : "/Contact",
         element : <ContactUs></ContactUs>
+      },
+      {
+        path : "/Home/:id",
+        element : <ServiceDetail></ServiceDetail>,
+        loader : () => fetch ('serviceData.json')
       }
+
 
     ]
   }
