@@ -8,6 +8,7 @@ import ErrorPage from './Components/Error/ErrorPage';
 import Services from './Components/Services/Services';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
+import About_Us from './Components/About/About_Us';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path : "/login",
         element : <Login></Login>
+       },
+      {
+        path : "/about_us",
+        element : <About_Us></About_Us>
       }
 
     ]
