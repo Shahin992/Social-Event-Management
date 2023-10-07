@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Elegant Wedding Planning",
+    "price": "$10,000 and up",
+    "short_Description": "Our wedding planning service is dedicated to transforming your dream wedding into a flawless reality.",
+    "description": "Our wedding planning service is dedicated to transforming your dream wedding into a flawless reality. From the moment you say 'yes' to the final 'I do,' we handle every facet of your special day. Our team of seasoned wedding planners works closely with you, ensuring every detail, from venue selection that captures your vision to arranging exquisite floral designs, catering, entertainment, and more, reflects your unique love story. With CelebrateJoy's wedding planning service, relax and savor every moment of your special day, knowing we're taking care of everything to make it truly magical.",
+    "image_url": "https://i.ibb.co/JKvCfqW/wedding-couple-beautiful-couple-bride-groom-look-each-other-smiling.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Memorable Birthday Parties",
+    "price": "$1,500 - $2,800",
+    "short_Description": "Leave the party planning to us! Celebrate Joy specializes in crafting unforgettable birthday parties for all ages.",
+    "description": "Leave the party planning to us! Celebrate Joy specializes in crafting unforgettable birthday parties for all ages. Whether you're planning a whimsical children's party, a milestone celebration, or an intimate gathering, our expert planners collaborate with you to select the perfect theme, design custom invitations, arrange top-notch entertainment, and curate stunning decor that reflects your personality and vision. With CelebrateJoy's birthday party planning service, you can relax and enjoy the festivities, knowing we're orchestrating a day filled with laughter, happiness, and cherished memories.",
+    "image_url": "https://i.ibb.co/bN8mTnc/children-celebrating-birthday.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Anniversary Bliss",
+    "price": "$1,000 - $3,000",
+    "short_Description": "Celebrate your enduring love with elegance and ease through our anniversary coordination service.",
+    "description": "Celebrate your enduring love with elegance and ease through our anniversary coordination service. We understand the importance of anniversaries, the milestones of your journey together. Our dedicated anniversary coordinators handle all the details, from finding the ideal venue to planning a romantic evening that perfectly encapsulates your love story. Whether it's your first or your fiftieth, we're here to ensure your anniversary celebration is a heartfelt and stress-free experience, allowing you to focus on the love that binds you.",
+    "image_url": "https://i.ibb.co/bW0zcmW/people-cling-wine-glasses-wedding-reception-with-bride-groom.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Engagement Extravaganza",
+    "price": "$1,500 - $4,000",
+    "short_Description": "The beginning of your love story deserves a memorable celebration, and our engagement party planning service is here to make it happen.",
+    "description": "The beginning of your love story deserves a memorable celebration, and our engagement party planning service is here to make it happen. Our expert party planners will craft an engagement extravaganza tailored to your unique style and love story. From venue selection to creating the perfect ambiance, our team takes care of every detail to create an enchanting event that allows you to savor the joy and anticipation of this special milestone.",
+    "image_url": "https://i.ibb.co/nRCym7Z/Engagement-1-1024x680.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Retirement Celebration",
+    "price": "$800 - $2,500",
+    "short_Description": "Retirement is a significant life transition, and it deserves to be celebrated in style.",
+    "description": "Retirement is a significant life transition, and it deserves to be celebrated in style. At CelebrateJoy, we offer retirement party planning and coordination services that help you bid farewell to your career with grace and joy. Our experienced team assists you in planning a memorable event, selecting the ideal venue, arranging thoughtful decor, and ensuring the party reflects your achievements and future plans. Let us take care of the details so you can relax and enjoy this new chapter in your life.",
+    "image_url": "https://i.ibb.co/27r5K78/Retirement-party.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Baby Shower Delight",
+    "price": "$300 - $1,000",
+    "short_Description": "Welcoming a new life into the world is a momentous occasion, and our baby shower planners are here to make it truly special.",
+    "description": "Welcoming a new life into the world is a momentous occasion, and our baby shower planners are here to make it truly special. Whether you're an expecting parent or a loved one planning the event, CelebrateJoy's baby shower planning service ensures a delightful and memorable gathering. We work with you to create a sweet and personalized experience, from selecting the perfect venue to crafting charming decor and arranging thoughtful activities. Celebrate this exciting chapter with a baby shower filled with love and joy, orchestrated by our expert team.",
+    "image_url": "https://i.ibb.co/Y3YW6mM/Full-Bleed-Images-Sized-for-Blog-8.webp"
+  }
+]
