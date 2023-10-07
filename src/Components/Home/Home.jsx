@@ -1,4 +1,5 @@
 import About_Us from "../About/About_Us";
+import ContactUs from "../About/ContactUs/ContactUs";
 import Services from "../Services/Services";
 
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
 
       <Services />
       <About_Us/>
+      <ContactUs/>
       
     </div>
   );

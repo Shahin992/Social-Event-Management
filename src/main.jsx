@@ -9,6 +9,7 @@ import Services from './Components/Services/Services';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
 import About_Us from './Components/About/About_Us';
+import ContactUs from './Components/About/ContactUs/ContactUs';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path : "/about_us",
         element : <About_Us></About_Us>
+      },
+      {
+        path : "/Contact",
+        element : <ContactUs></ContactUs>
       }
 
     ]

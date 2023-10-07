@@ -8,7 +8,7 @@ const Footer = () => {
 
         <NavLink to="/About_Us">About Us</NavLink>
 
-        <NavLink to="/login">Contact</NavLink>
+        <NavLink to="/Contact">Contact</NavLink>
             
             <NavLink to="/login"></NavLink>
         
