@@ -1,6 +1,28 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
+import "sweetalert2/dist/sweetalert2.min.css";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        Swal.fire("Good job!", "Log Out Successfully!", "success");
+      })
+      .catch((error) => {
+        const ErrorMessage = error.message;
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Something went wrong!",
+          footer: ErrorMessage,
+        });
+      });
+  };
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -51,37 +73,72 @@ const Navbar = () => {
               Services
             </NavLink>
             <li>
-          <NavLink
-              to="/register"
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? "pending"
-                  : isActive
-                  ? "text-white bg-accent-focus text-lg font-bold underline"
-                  : ""
-              }
-            >
-              Register
-            </NavLink>
-          </li>
-          <li>
-          <NavLink
-              to="/login"
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? "pending"
-                  : isActive
-                  ? "text-white bg-accent-focus text-lg font-bold underline"
-                  : ""
-              }
-            >
-              Log in
-            </NavLink>
-          </li>
+              <NavLink
+                to="/register"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-white bg-accent-focus text-lg font-bold underline"
+                    : ""
+                }
+              >
+                Register
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/login"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-white bg-accent-focus text-lg font-bold underline"
+                    : ""
+                }
+              >
+                Log in
+              </NavLink>
+            </li>
+            {
+            user ? (<li>
+              <NavLink
+                to="/event"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-white bg-accent-focus text-lg font-bold underline"
+                    : ""
+                }
+              >
+                Event
+              </NavLink>
+              
+            </li>) : <p></p>
+          }
+
+{
+            user ? (<li>
+              <NavLink
+                to="/booking"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-white bg-accent-focus text-lg font-bold underline"
+                    : ""
+                }
+              >
+                Booking
+              </NavLink>
+              
+            </li>) : <p></p>
+          }
           </ul>
         </div>
         <img
-          className="md:h-20 h-28 md:ml-0 ml-10"
+          className="md:h-20 h-28 md:ml-0 ml-10 hidden md:block"
           src="https://i.ibb.co/gzCkRs1/Event-wizard.jpg"
           alt=""
         />
@@ -118,7 +175,7 @@ const Navbar = () => {
           </li>
 
           <li>
-          <NavLink
+            <NavLink
               to="/register"
               className={({ isActive, isPending }) =>
                 isPending
@@ -132,7 +189,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-          <NavLink
+            <NavLink
               to="/login"
               className={({ isActive, isPending }) =>
                 isPending
@@ -144,11 +201,69 @@ const Navbar = () => {
             >
               Log in
             </NavLink>
+            
           </li>
+
+          {
+            user ? (<li>
+              <NavLink
+                to="/event"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-white bg-accent-focus text-lg font-bold underline"
+                    : ""
+                }
+              >
+                Event
+              </NavLink>
+              
+            </li>) : <p></p>
+          }
+
+{
+            user ? (<li>
+              <NavLink
+                to="/booking"
+                className={({ isActive, isPending }) =>
+                  isPending
+                    ? "pending"
+                    : isActive
+                    ? "text-white bg-accent-focus text-lg font-bold underline"
+                    : ""
+                }
+              >
+                Booking
+              </NavLink>
+              
+            </li>) : <p></p>
+          }
+
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        {user ? (
+          <div className="flex gap-5 justify-center items-center">
+            <div className="flex flex-col">
+            <div className="w-16 h-16 rounded-full overflow-hidden">
+              <img className="w-full h-full object-cover" src={user.photoURL} alt="" />
+            </div>
+            <div>
+              <h3 className="text-xl font-medium">{user.displayName}</h3>
+            </div>
+            </div>
+            <div>
+              <button className="btn btn-accent" onClick={handleLogOut}>
+                Log Out
+              </button>
+            </div>
+          </div>
+        ) : (
+          <Link className="btn btn-accent" to="/login">
+            log in
+          </Link>
+        )}
       </div>
     </div>
   );

@@ -12,6 +12,10 @@ import About_Us from './Components/About/About_Us';
 import ContactUs from './Components/About/ContactUs/ContactUs';
 import ServiceDetail from './Components/ServiceDetails/ServiceDetail';
 import AuthProvider from './Components/AuthProvider/AuthProvider';
+import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
+import Event from "./Components/Events/Event";
+import Booking from "./Components/Booking/Booking";
+
 
 const router = createBrowserRouter([
   {
@@ -45,8 +49,17 @@ const router = createBrowserRouter([
       },
       {
         path : "/Home/:id",
-        element : <ServiceDetail></ServiceDetail>,
+        element : <PrivateRoute><ServiceDetail></ServiceDetail></PrivateRoute>,
         loader : () => fetch ('serviceData.json')
+      },
+      {
+        path : "/event",
+        element : <PrivateRoute><Event></Event></PrivateRoute>,
+        loader : () => fetch ('worked.json')
+      },
+      {
+        path: "/booking",
+        element : <PrivateRoute><Booking></Booking></PrivateRoute>
       }
 
 

@@ -1,25 +1,68 @@
+/* eslint-disable no-constant-condition */
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
   const {createUser} = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+ 
 
   const handleRegister = e =>{
     e.preventDefault();
+    const username = e.target.username.value;
     const name = e.target.name.value;
+    const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(name,email,password);
 
+    
+
+    if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password)){
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Your Password should contain  at least 6 characters, 1 UpperCase, 1 lowercase, 1 symbol ',
+        
+      });
+      return;
+    }
+
+  
     createUser(email,password)
     .then(result =>{
       console.log(result.user);
+      Swal.fire(
+        'Good job!',
+        'Account Created Successfully!',
+        'success'
+      )
+
+      updateProfile(result.user,{
+        displayName : username,
+        photoURL : photo
+      })
+
+
+      navigate(location?.state ? location.state : '/');
+
     })
 
     .catch(error =>{
-      console.log(error.error.massage);
+     const ErrorMessage =error.message
+     console.log(ErrorMessage);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: ErrorMessage
+      })
     })
 
     

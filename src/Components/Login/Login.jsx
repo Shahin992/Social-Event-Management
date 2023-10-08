@@ -1,8 +1,42 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
 const Login = () => {
+
+  const {login} = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogin = (e) =>{
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email,password);
+
+    login(email,password)
+    .then(result =>{
+      console.log(result.user);
+      Swal.fire(
+        'Good job!',
+        'Log in Successfully!',
+        'success'
+      )
+      navigate(location?.state ? location.state : '/');
+    })
+
+    .catch(error =>{
+      console.log(error.message); 
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong! Please check your email and password',
+      })
+    })
+  }
 
   
 
@@ -17,7 +51,7 @@ const Login = () => {
           />
         </div>
         <div>
-            <form>
+            <form onSubmit={handleLogin}>
             <h1 className=" text-gray-800 font-bold text-2xl mb-5 text-center">
               Please Log in!!!
             </h1>
@@ -71,7 +105,7 @@ const Login = () => {
               type="submit"
               className="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
             >
-              Sign in
+              Log in
             </button>
             <a
               href="#!"
