@@ -15,15 +15,15 @@ const Card = ({ data }) => {
             {short_Description}
           </p>
           <p className="text-xl md:text-2xl font-bold mb-5">Price: {price}</p>
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center w-full">
             
             
              <Link to={`/Home/${id}`}>
-             <div className="card-actions justify-end">
-             <button className="btn btn-accent text-white font-medium">
+             
+             <button className="btn btn-accent w-[100%] text-white font-medium">
                 View-Details
               </button>
-              </div>
+              
              </Link>
               
             

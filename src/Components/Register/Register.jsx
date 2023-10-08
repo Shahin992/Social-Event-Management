@@ -1,6 +1,38 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Register = () => {
+
+  const {createUser} = useContext(AuthContext);
+
+  const handleRegister = e =>{
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(name,email,password);
+
+    createUser(email,password)
+    .then(result =>{
+      console.log(result.user);
+    })
+
+    .catch(error =>{
+      console.log(error.error.massage);
+    })
+
+    
+
+
+    
+
+  }
+
+
+
+
+
   return (
     <div className="my-10">
       <div className="h-screen md:flex justify-between">
@@ -20,9 +52,9 @@ const Register = () => {
           <div className="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
         </div>
         <div className="flex md:w-1/2 justify-center py-10 items-center bg-white">
-          <form className="bg-white">
+          <form onSubmit={handleRegister} className="bg-white">
             <h1 className="text-gray-800 font-bold text-2xl mb-1">
-              Create Account!!!
+             Please Create Your Account!!
             </h1>
             
             <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -64,6 +96,7 @@ const Register = () => {
                 className="pl-2 outline-none border-none"
                 type="text"
                 name="photo"
+                required
                 id=""
                 placeholder="Photo URL"
               />

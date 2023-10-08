@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from 'react-dom/client'
 import './index.css'
@@ -11,6 +11,7 @@ import Login from './Components/Login/Login';
 import About_Us from './Components/About/About_Us';
 import ContactUs from './Components/About/ContactUs/ContactUs';
 import ServiceDetail from './Components/ServiceDetails/ServiceDetail';
+import AuthProvider from './Components/AuthProvider/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <AuthProvider>
     <RouterProvider router={router} />
-  </React.StrictMode>,
+  </AuthProvider>,
 )

@@ -31,7 +31,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-accent text-lg font-bold underline"
+                  ? "text-white bg-accent-focus text-lg font-bold underline"
                   : ""
               }
             >
@@ -44,7 +44,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-accent text-lg font-bold underline"
+                  ? "text-white bg-accent-focus text-lg font-bold underline"
                   : ""
               }
             >
@@ -57,7 +57,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-accent text-lg font-bold underline"
+                  ? "text-white bg-accent-focus text-lg font-bold underline"
                   : ""
               }
             >
@@ -71,7 +71,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-accent text-lg font-bold underline"
+                  ? "text-white bg-accent-focus text-lg font-bold underline"
                   : ""
               }
             >
@@ -95,7 +95,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-accent text-lg font-bold underline"
+                  ? "text-white bg-accent-focus text-lg font-bold underline"
                   : ""
               }
             >
@@ -109,7 +109,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-accent text-lg font-bold underline"
+                  ? "text-white bg-accent-focus text-lg font-bold underline"
                   : ""
               }
             >
@@ -124,7 +124,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-accent text-lg font-bold underline"
+                  ? "text-white bg-accent-focus text-lg font-bold underline"
                   : ""
               }
             >
@@ -138,7 +138,7 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "text-accent text-lg font-bold underline"
+                  ? "text-white bg-accent-focus text-lg font-bold underline"
                   : ""
               }
             >

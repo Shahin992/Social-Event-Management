@@ -1,6 +1,11 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Login = () => {
+
+  
+
   return (
     <div>
       <div className="p-4 my-10 flex md:flex-row flex-col">
@@ -14,7 +19,7 @@ const Login = () => {
         <div>
             <form>
             <h1 className=" text-gray-800 font-bold text-2xl mb-5 text-center">
-              Log in!!!
+              Please Log in!!!
             </h1>
             <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
               <svg
@@ -66,7 +71,7 @@ const Login = () => {
               type="submit"
               className="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2"
             >
-              Sign Up
+              Sign in
             </button>
             <a
               href="#!"
