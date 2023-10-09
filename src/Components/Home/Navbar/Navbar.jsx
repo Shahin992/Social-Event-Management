@@ -72,34 +72,39 @@ const Navbar = () => {
             >
               Services
             </NavLink>
-            <li>
-              <NavLink
-                to="/register"
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "pending"
-                    : isActive
-                    ? "text-white bg-accent-focus text-lg font-bold underline"
-                    : ""
-                }
-              >
-                Register
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                to="/login"
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "pending"
-                    : isActive
-                    ? "text-white bg-accent-focus text-lg font-bold underline"
-                    : ""
-                }
-              >
-                Log in
-              </NavLink>
-            </li>
+            {
+          user ? <></> :  <li>
+          <NavLink
+            to="/register"
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "text-white bg-accent-focus text-lg font-bold underline"
+                : ""
+            }
+          >
+            Register
+          </NavLink>
+        </li>
+         }
+          {
+            user ? <></> :<li>
+            <NavLink
+              to="/login"
+              className={({ isActive, isPending }) =>
+                isPending
+                  ? "pending"
+                  : isActive
+                  ? "text-white bg-accent-focus text-lg font-bold underline"
+                  : ""
+              }
+            >
+              Log in
+            </NavLink>
+            
+          </li>
+          }
             {
             user ? (<li>
               <NavLink
@@ -174,21 +179,24 @@ const Navbar = () => {
             </NavLink>
           </li>
 
-          <li>
-            <NavLink
-              to="/register"
-              className={({ isActive, isPending }) =>
-                isPending
-                  ? "pending"
-                  : isActive
-                  ? "text-white bg-accent-focus text-lg font-bold underline"
-                  : ""
-              }
-            >
-              Register
-            </NavLink>
-          </li>
-          <li>
+         {
+          user ? <></> :  <li>
+          <NavLink
+            to="/register"
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "text-white bg-accent-focus text-lg font-bold underline"
+                : ""
+            }
+          >
+            Register
+          </NavLink>
+        </li>
+         }
+          {
+            user ? <></> :<li>
             <NavLink
               to="/login"
               className={({ isActive, isPending }) =>
@@ -203,6 +211,7 @@ const Navbar = () => {
             </NavLink>
             
           </li>
+          }
 
           {
             user ? (<li>
@@ -254,13 +263,13 @@ const Navbar = () => {
             </div>
             </div>
             <div>
-              <button className="btn btn-accent" onClick={handleLogOut}>
+              <button className="btn btn-accent text-white font-medium" onClick={handleLogOut}>
                 Log Out
               </button>
             </div>
           </div>
         ) : (
-          <Link className="btn btn-accent" to="/login">
+          <Link className="btn btn-accent text-white font-medium" to="/login">
             log in
           </Link>
         )}
