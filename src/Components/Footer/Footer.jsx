@@ -23,7 +23,7 @@ const Footer = () => {
           </div>
         </nav> 
         <aside>
-          <p>Copyright © 2023 - All right reserved by event organizer</p>
+          <p>Copyright © 2023 - All right reserved by <span className="text-yellow-300 font-extrabold"> EVENT</span> <span className="font-extrabold text-slate-950">WIZARDS</span></p>
         </aside>
       </footer>
     );

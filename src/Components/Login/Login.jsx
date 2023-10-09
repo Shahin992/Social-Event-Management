@@ -3,12 +3,35 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 const Login = () => {
 
-  const {login} = useContext(AuthContext);
+  const {login,googleLogin,githubLogin} = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const googleBtn = () => {
+    googleLogin()
+    .then(result =>{
+      console.log(result.user);
+      Swal.fire(
+        'Good job!',
+        'Log in Successfully!',
+        'success'
+      )
+      navigate(location?.state ? location.state : '/');
+    })
+    .catch(error =>{
+      console.log(error.message); 
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong! Please check your email and password',
+      })
+    })
+  }
 
   const handleLogin = (e) =>{
     e.preventDefault();
@@ -38,10 +61,38 @@ const Login = () => {
     })
   }
 
+  const githubBtn = () => {
+    githubLogin()
+    .then(result =>{
+      console.log(result.user);
+      Swal.fire(
+        'Good job!',
+        'Log in Successfully!',
+        'success'
+      )
+      navigate(location?.state ? location.state : '/');
+    })
+
+    .catch(error =>{
+      console.log(error.message); 
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong! Please check your email and password',
+      })
+    })
+
+    
+
+  }
+
   
 
   return (
     <div>
+      <div className="flex flex-col justify-center items-center">
+        <h2 className="text-2xl md:text-4xl font-bold text-center mb-8">Log in to Your <span className="text-yellow-300 font-extrabold"> EVENT</span> <span className="font-extrabold text-slate-950">WIZARDS</span> Account</h2>
+        </div>
       <div className="p-4 my-10 flex md:flex-row flex-col">
         <div className="mb-12 md:mb-0 md:w-8/12 lg:w-6/12">
           <img
@@ -53,7 +104,7 @@ const Login = () => {
         <div>
             <form onSubmit={handleLogin}>
             <h1 className=" text-gray-800 font-bold text-2xl mb-5 text-center">
-              Please Log in!!!
+             Log in!
             </h1>
             <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
               <svg
@@ -116,6 +167,18 @@ const Login = () => {
             <p className="mt-5 ">Don't have any account? please <Link  className="text-2xl font-semibold hover:underline hover:text-accent" to={'/register'}>Register</Link> </p>
             
             </form>
+            <div
+            className="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
+            <p
+              className="mx-4 mb-0 text-center font-semibold dark:text-neutral-200">
+              OR
+            </p>
+          </div>
+
+            <div>
+            <button onClick={googleBtn} className= 'flex justify-center items-center block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2 '><FcGoogle className='mr-5 text-2xl'></FcGoogle>Sign in with google</button>
+            <button onClick={githubBtn} className= 'flex justify-center items-center block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2 '><FaGithub className='mr-5 text-2xl'></FaGithub>Sign in with github</button>
+            </div>
 
         </div>
       </div>

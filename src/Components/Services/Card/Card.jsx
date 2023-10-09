@@ -5,7 +5,7 @@ const Card = ({ data }) => {
 
   return (
     <div className="p-4 md:p-0">
-      <div className="card card-compact  md:p-0 bg-base-100 shadow-xl">
+      <div data-aos="flip-left" className="card card-compact  md:p-0 bg-base-100 shadow-xl">
         <figure>
           <img className="h-64 w-full" src={image_url} alt="Shoes" />
         </figure>

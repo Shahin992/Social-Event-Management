@@ -17,6 +17,9 @@ const Booking = () => {
         <h2 className="text-2xl md:text-4xl font-bold text-center mb-8">Reserve Your Celebration</h2>
         <p className="md:w-3/4 mb-8 text-center text-2xl md:text-2xl font-semibold">Ready to make your event a reality? Reserve your date and secure our services quickly and easily. Get started on your journey to a memorable celebration.</p>
         </div>
+        <div className='flex justify-center items-center '>
+          <img className='w-3/4 h-[400px] rounded-2xl' src="https://i.ibb.co/ygHFyMX/pexels-abby-kihano-431722.jpg" alt="" />
+        </div>
         </div>
       <div className="flex items-center justify-center p-12">
         <div className="mx-auto w-full max-w-[550px] bg-white">

@@ -17,7 +17,7 @@ const About_Us = () => {
           </div>
           <div className="lg:w-1/2">
             <p className="md:text-4 text-2xl font-medium">
-              <span className="font-bold text-3xl ">Welcome to Event Organizer</span>, where we turn your special moments into
+              <span className="font-bold text-3xl ">Welcome to Event Wizard</span>, where we turn your special moments into
               Event Organizer is your partner in crafting extraordinary moments. With a dedicated team of event professionals, we specialize in transforming special occasions into cherished memories. Our commitment to attention to detail, creativity, and personalized service sets us apart. From weddings to birthdays and anniversaries, we're here to make your dreams a reality. Join us in celebrating life's precious moments, and let's create memories that last a lifetime.
             </p>
           </div>

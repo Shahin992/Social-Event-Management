@@ -30,11 +30,11 @@ const ContactUs = () => {
           />
           <input
             type="text"
-            placeholder="Your Massage"
+            placeholder="Your Message"
             className="text-3xl font-semibold input input-bordered input-lg h-[162px] w-3/4 md:w-1/2"
           />
           <button className="btn btn-accent text-white text-2xl w-3/4 md:w-1/2">
-            Send Massage
+            Send Message
           </button>
         </div>
       </div>

@@ -5,12 +5,60 @@ import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from 'sweetalert2';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import { updateProfile } from "firebase/auth";
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 const Register = () => {
 
-  const {createUser} = useContext(AuthContext);
+  const {createUser,googleLogin,githubLogin} = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+
+  const googleBtn = () => {
+    googleLogin()
+    .then(result =>{
+      console.log(result.user);
+      Swal.fire(
+        'Good job!',
+        'Log in Successfully!',
+        'success'
+      )
+      navigate(location?.state ? location.state : '/');
+    })
+    .catch(error =>{
+      console.log(error.message); 
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong! Please check your email and password',
+      })
+    })
+  }
+
+  const githubBtn = () => {
+    githubLogin()
+    .then(result =>{
+      console.log(result.user);
+      Swal.fire(
+        'Good job!',
+        'Log in Successfully!',
+        'success'
+      )
+      navigate(location?.state ? location.state : '/');
+    })
+
+    .catch(error =>{
+      console.log(error.message); 
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong! Please check your email and password',
+      })
+    })
+
+    
+
+  }
  
 
   const handleRegister = e =>{
@@ -22,13 +70,32 @@ const Register = () => {
     const password = e.target.password.value;
     console.log(name,email,password);
 
-    
-
-    if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password)){
+    if (password.length < 6){
       Swal.fire({
         icon: 'error',
         title: 'Error',
-        text: 'Your Password should contain  at least 6 characters, 1 UpperCase, 1 lowercase, 1 symbol ',
+        text: 'Your Password should contain  at least 6 characters.',
+        
+      });
+      return
+    }
+
+    else if (!/[A-Z]/.test(password)){
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Your Password should contain  at least 1 Uppercase characters.',
+        
+      });
+      return
+
+    }
+
+    else if (!/([@$!%*#?&])/.test(password)){
+      Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'Your Password should contain  at least 1 Special characters.',
         
       });
       return;
@@ -78,6 +145,9 @@ const Register = () => {
 
   return (
     <div className="my-10">
+      <div className="flex flex-col justify-center items-center">
+        <h2 className="text-2xl md:text-4xl font-bold text-center mb-8">Create Your <span className="text-yellow-300 font-extrabold"> EVENT</span> <span className="font-extrabold text-slate-950">WIZARDS</span> Account</h2>
+        </div>
       <div className="h-screen md:flex justify-between">
         <div className="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden">
           <div>
@@ -96,8 +166,8 @@ const Register = () => {
         </div>
         <div className="flex md:w-1/2 justify-center py-10 items-center bg-white">
           <form onSubmit={handleRegister} className="bg-white">
-            <h1 className="text-gray-800 font-bold text-2xl mb-1">
-             Please Create Your Account!!
+          <h1 className=" text-gray-800 font-bold text-2xl mb-5 text-center">
+              Sign Up
             </h1>
             
             <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -229,7 +299,13 @@ const Register = () => {
               OR
             </p>
           </div>
+          <div>
+            <button onClick={googleBtn} className= 'flex justify-center items-center block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2 '><FcGoogle className='mr-5 text-2xl'></FcGoogle>Sign in with google</button>
+            <button onClick={githubBtn} className= 'flex justify-center items-center block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2 '><FaGithub className='mr-5 text-2xl'></FaGithub>Sign in with github</button>
+            </div>
           </form>
+         
+
           
         </div>
       </div>

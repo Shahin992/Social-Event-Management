@@ -245,7 +245,7 @@ const Navbar = () => {
       <div className="navbar-end">
         {user ? (
           <div className="flex gap-5 justify-center items-center">
-            <div className="flex flex-col">
+            <div className="flex flex-col justify-center items-center">
             <div className="w-16 h-16 rounded-full overflow-hidden">
               <img className="w-full h-full object-cover" src={user.photoURL} alt="" />
             </div>
