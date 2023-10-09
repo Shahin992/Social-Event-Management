@@ -1,8 +1,13 @@
-# React + Vite
+# Website Name : Event-Wizards
+# Live Link : https://event-wizard-shahin.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features of My Website
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Event Categories: Categorize events like weddings, birthdays, anniversaries, and more for easy navigation.
+- User Registration Form: Create a registration form where users can provide their details, including name, email, password, and any additional information you require.
+-Login Form: Create a login form where users can enter their registered email and password.
+- Session Management: Implement session management to maintain user sessions securely.
+- Contact Information: Make it easy for visitors to get in touch with us, including a contact form and contact details.
+- Responsive Design: Ensure your website is mobile-friendly to accommodate users on various devices.
+- Social Media Integration: Connect your website to your (google,github) profiles for increased engagement and visibility.
+- Contact Information: Make it easy for visitors to get in touch with you, including a contact form and contact details.
